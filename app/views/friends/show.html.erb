@@ -1,0 +1,21 @@
+
+<div class="jumbotron">
+  <div class="row no-gutters">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h1 class="card-title">
+          <%= @friend.first_name %>
+          <%= @friend.last_name %>
+        </h1>
+        <p class="card-text"><%= @friend.email %> | <%= @friend.phone %> | <%= @friend.twitter %></p>
+      </div>
+    </div>
+    <div class="col-md-4", style="width:200px; height=auto">
+        <%= image_tag(@friend.image, style:"width:100%") rescue image_tag('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/542px-Unknown_person.jpg', style:"width:100%")%>
+    </div>
+  </div>
+   <hr class="my-4">
+  <%= link_to 'Edit', edit_friend_path(@friend), class:"btn btn-secondary" %>
+  <%= link_to 'Delete', @friend, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+  <%= link_to 'Back', friends_path, class:"btn btn-secondary" %>
+</div>
